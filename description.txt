@@ -1,0 +1,87 @@
+Prompt Text: Building a Multi-Agent System with Google ADK and Local LLMs for Collaborative Coding Tasks
+
+I want to create a local multi-agent system using Google's Agent Development Kit (ADK), running entirely on my machine with models I have stored locally. These models will not rely on cloud APIs or external hosted services. Each model will have a dedicated role in a collaborative workflow aimed at delivering complete coding solutions through discussion, task specialization, and iterative refinement.
+
+🎯 Objective
+Develop a modular, local-first agent-based coding assistant using ADK, where:
+
+Each agent is powered by a local LLM (e.g., LLaMA, Mistral, or similar) running on my hardware.
+
+Agents collaborate in parallel or sequentially based on task requirements and system performance.
+
+The system outputs a well-structured project folder with code, plans, discussions, and final outputs.
+
+A custom dynamic UI displays real-time conversations, task progress, and allows file/image uploads for agents that support such inputs.
+
+🔁 Workflow Description
+Agent Roles Setup:
+
+Main Orchestrator Agent:
+
+Interacts with the user.
+
+Understands the high-level intent.
+
+Asks follow-up questions to refine the prompt.
+
+Delegates tasks to specialized agents based on user input.
+
+Workflow Designer Agent:
+
+Breaks down the task into a sequence or graph of subtasks.
+
+Assigns subtasks to appropriate agents based on model capabilities.
+
+Coding Agents (2–3 models):
+
+Each specializes in a domain (e.g., frontend, backend, testing, optimization).
+
+Discuss the best architecture, exchange code strategies.
+
+Iterate collaboratively, each adding improvements or validating others’ outputs.
+
+Reviewer Agent:
+
+Reviews the full solution.
+
+Suggests improvements, checks structure, and performs final QA before packaging.
+
+Parallel Execution:
+
+Tasks can run in parallel where hardware (VRAM, CPU, etc.) permits.
+
+ADK's Parallel and Loop orchestration components should be used.
+
+File I/O Capabilities:
+
+Agents should be capable of reading files or images if supported by the model.
+
+The UI must expose an upload button for user inputs (e.g., uploading a sketch or codebase for reference).
+
+Final Output:
+
+All files generated are saved into a structured output folder.
+
+Includes README.md, architecture.json, src/, tests/, and agent_logs/.
+
+🛠️ Technical Requirements
+Model Wrappers: Create custom ADK-compatible classes that wrap local LLMs.
+
+Tool Interfaces: Extend or create ADK Tool classes to handle file I/O, code execution, and inter-agent messaging.
+
+Hardware Awareness:
+
+Agents must be aware of system performance constraints (VRAM, RAM, CPU load).
+
+Workflow Designer may prioritize serial over parallel execution based on performance.
+
+💻 Interface Requirements
+Dynamic web-based or local UI (e.g., built with Streamlit or Gradio) that:
+
+Shows agent conversations in real-time (chat-style view).
+
+Displays task progression with visual indicators (e.g., progress bars or agent activity cards).
+
+Allows user to upload files (code snippets, diagrams, images).
+
+Optionally, displays system resource usage to help adjust agent behavior dynamically.
