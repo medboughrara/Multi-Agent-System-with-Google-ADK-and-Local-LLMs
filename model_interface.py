@@ -34,9 +34,9 @@ class OllamaInterface:
     def is_available(model_name: str) -> bool:
         """Check if a specific model is available in Ollama."""
         return model_name in OllamaInterface.list_models()
-    
-    @staticmethod
+      @staticmethod
     def generate(model_name: str, prompt: str, **kwargs) -> Tuple[bool, str]:
+        """Generate text using an Ollama model with proper encoding handling."""
         """Generate text using an Ollama model."""
         try:
             # Format the command with any model configuration
