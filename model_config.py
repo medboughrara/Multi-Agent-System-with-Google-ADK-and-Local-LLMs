@@ -1,6 +1,4 @@
-"""
-Model mappings and configurations for different specializations.
-"""
+
 
 # Specialization to model mapping
 SPECIALIZATION_MODELS = {
