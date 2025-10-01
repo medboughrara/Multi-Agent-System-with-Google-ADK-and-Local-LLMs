@@ -13,9 +13,6 @@ The system outputs a well-structured project folder with code, plans, discussion
 
 A custom dynamic UI displays real-time conversations, task progress, and allows file/image uploads for agents that support such inputs.
 
-🔁 Workflow Description
-Agent Roles Setup:
-
 Main Orchestrator Agent:
 
 Interacts with the user.
